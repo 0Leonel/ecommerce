@@ -23,21 +23,17 @@ export const HomeView = () => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
 
-    // Realiza la búsqueda solo si hay un término de búsqueda
-    if (dato.trim() !== '') {
-      // Realiza la lógica de búsqueda aquí
-      console.log('Realizando búsqueda para:', dato);
-    }
+    setDato(e.target.value);
   };
   return (
-    <div >
-     <div className='flex flex-col items-center'>
-        {/* <h1 className='text-3xl font-bold py-2 text-[#E46205]'>Sr. Bigotes</h1> */}
-        
-        <div className='flex items-center justify-center w-full'>
+    <>
+        <div className='flex items-center justify-center min-h-screen'>
           <AppCard2 data={drinks?.drinks} />
         </div>
       
+     {/* <div className='flex flex-col items-center'>
+        <h1 className='text-3xl font-bold py-2 text-[#E46205]'>Sr. Bigotes</h1>
+        
         <form className='flex items-center justify-center w-full max-w-md mt-4' onSubmit={handleSearchSubmit}>
           <AppInput
             type="text"
@@ -47,8 +43,8 @@ export const HomeView = () => {
             placeholder="Search"
           />
         </form>
-      </div>
-      <div className='lg:block flex flex-col items-center py-4'>
+      </div> */}
+      {/* <div className='lg:block flex flex-col items-center py-4'>
           <div className='grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-12'>
             {searchLoading ? <AppLoading/> : <>
             {search?.drinks ? <AppCard data={search?.drinks} /> : <div className='flex justify-center'>
@@ -60,7 +56,7 @@ export const HomeView = () => {
             </>
             }
           </div>
-            </div>
-    </div>
+            </div> */}
+    </>
   )
 }

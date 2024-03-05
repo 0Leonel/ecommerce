@@ -4,7 +4,9 @@ import sideBar from "../../../assets/menu/sideBar.svg"
 import { AppFooter } from "../appFooter/appFooter"
 import { useState } from "react"
 export const AppSideMenu = (props) => {
-   const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState(null);
+
     const menu =[
         {id: 0, title:"Home", link:"/"},
         {id: 1, title:"Ordinary Drink", link:"/ordinary-drink"},
@@ -19,6 +21,12 @@ export const AppSideMenu = (props) => {
         {id: 10, title:"Beer", link:"/beer"},
         {id: 12, title:"Soft Drink", link:"/soft-drink"},
     ]
+
+    const handleCategoryClick = (categoryId) => {
+      setActiveCategory(categoryId);
+      setOpen(false); // Cierra el menú después de hacer clic en una categoría
+    };
+
   return (
    <div className='bg-[#0D0D0D]'>
    <button
@@ -43,11 +51,13 @@ export const AppSideMenu = (props) => {
        <ul className="space-y-2 font-medium">
          {menu.map((item) => (
            <li key={item.id}>
-             <Link
-               to={item.link}
-               className="flex items-center p-2 group text-[#BCBCBC]"
-               onClick={()=>setOpen(!open)}
-             >
+            <Link
+                  to={item.link}
+                  className={`flex items-center p-2 group text-[#BCBCBC] hover:bg-[#425759] focus:bg-[#425759] rounded-lg ${
+                    activeCategory === item.id ? "bg-[#425759]" : ""
+                  }`}
+                  onClick={() => handleCategoryClick(item.id)}
+                >
                <span className="flex-1 ms-3 whitespace-nowrap">{item.title}</span>
              </Link>
            </li>

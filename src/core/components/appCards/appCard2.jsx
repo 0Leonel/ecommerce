@@ -29,22 +29,22 @@ const AppCard2 = (props) => {
 
   return (
     <>
-      <div className='grid place-items-center gap-4 lg:grid-cols-2  rounded-lg shadow-lg max-w-4xl'>
-            <img src={data[0].strDrinkThumb} alt={data[0].strDrink} className='object-cover rounded-lg w-full h-full' />
+      <div className='grid place-items-center gap-4 lg:grid-cols-2  rounded-lg shadow-lg bg-[#2B2B2B] max-w-6xl'>
+            <img src={data[0].strDrinkThumb} alt={data[0].strDrink} className='object-cover rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none w-full h-full' />
         <div>
           <div className='flex flex-row justify-start items-center gap-6 pb-3'>
           <h3 className='text-md text-red-600 font-semibold'></h3>
           <p className='text-sm text-gray-600'>Ultima modificación: <span className='italic'>{data[0].dateModified?.toString().slice(0, 10)}</span> </p>
 
           </div>
-          <div className='flex flex-row justify-start items-center gap-6 pb-3'>
+          <div className='flex flex-row justify-start items-center gap-6 pb-3 px-3'>
           <h1 className='text-2xl text-[#FFF] font-bold font-sans'>{data[0].strDrink}</h1>
           <p className='text-sm text-gray-500 font-bold'>{data[0].strCategory}</p>
           <p className='text-sm'>{data[0].strAlcoholic}</p>
 
           </div>
            {hasIngredients ? (
-            <div>
+            <div className="px-3">
               <p className='text-md text-white font-mono'>Ingredientes:</p>
               <ul>
                 {cocktailRecipe.map((ingredient, index) => (
@@ -57,7 +57,7 @@ const AppCard2 = (props) => {
 
           {/* <p className='text-md text-white font-mono py-2'>{data[0]?.strInstructionsDE}</p> */}
 
-          <p className='text-md text-white font-mono py-2'>{data[0]?.strInstructions} </p>
+          <p className='text-md text-white font-mono py-2 px-3'>{data[0]?.strInstructions} </p>
           
         </div>
         

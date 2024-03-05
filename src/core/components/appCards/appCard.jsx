@@ -14,9 +14,9 @@ export const AppCard = (props) => {
                         <span className="text-2xl font-bold text-[#0D0D0D] ">${item?.idDrink.slice(0,2)}</span>
                     </div>
                     
-                    <button className="text-white bg-[#037F8C] rounded-full hover:bg-[#024A52] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium p-2 text-sm">
+                    {/* <button className="text-white bg-[#037F8C] rounded-full hover:bg-[#024A52] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium p-2 text-sm">
                     <img src={cardIcon} alt="cardIcon" className='w-6 h-6'/>
-                    </button>
+                    </button> */}
                 </div>
             </Link>
             <div className=" absolute top-0 inset-x-0 text-center  px-2 pb-2 opacity-0 group-hover:opacity-100 bg-white/50 rounded-lg">
